@@ -32,8 +32,8 @@ Aside from that, you can use the up and down arrows to scroll through commands. 
 ```
 > 2 + 2
 4
-> echo bonjour peoples
-bonjour peoples
+> echo stop repeating me
+stop repeating me
 ```
 
 ### Adding methods
@@ -61,7 +61,7 @@ web_console.add_command(key, command);
 ## Possible problems
 This list is by no means exhaustive (as you might have guessed)
 
-* webConsole creates a div with **id = "txt"**. If you already have such a div on your page, it will mess things up.
+* webConsole creates a div with **id = "webC_txt"**. If you already have that id on your page, it will mess things up.
 * webConsole will add the attribute **tabindex="0"** to the div you assign as the console. This might make things difficult for you if you also have a tabindex specified somewhere 
 
 ## Dependencies

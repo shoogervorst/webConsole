@@ -40,8 +40,8 @@ webConsole = function(element, background_color, text_color, prompt_symbol) {
       $(this).css("cursor","pointer");
     });
     
-    web_console.append('<div id="txt"> </div>');
-    txt = $('#txt');
+    web_console.append('<div id="webC_txt"> </div>');
+    txt = $('#webC_txt');
     
     txt.css({
         'padding': '10px 50px 5px 10px',
@@ -100,7 +100,7 @@ webConsole = function(element, background_color, text_color, prompt_symbol) {
             'method' : function(args){
                 console_txt = "";
             }
-        }
+        };
     }
     
     function log(text, noReplace){
@@ -240,5 +240,5 @@ webConsole = function(element, background_color, text_color, prompt_symbol) {
     
     webConsole.prototype.log = function(text){
         log(text);
-    }    
-}
+    };    
+};
