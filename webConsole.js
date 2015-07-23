@@ -6,13 +6,14 @@
 * @param text_color the text color for the web command prompt
 * @param prompt_symbol the symbol to precede all commands from the user
 */
-webConsole = function(element, background_color, text_color, prompt_symbol) {
+webConsole = function(element, background_color, text_color, prompt_symbol, eval_js) {
             
     var html_element = element || "#console";
     var console_txt = "";
     var first = prompt_symbol || ">";
     first += " ";
     var cursor = "";
+    var evaluate_js = eval_js || false;
     var current_line = "";
     var cursorPosition = 0;
     var txt;
@@ -175,6 +176,14 @@ webConsole = function(element, background_color, text_color, prompt_symbol) {
             }
             catch(e) {
                 result = "";
+                if(evaluate_js){
+                    try {
+                        result = eval(input);
+                    }
+                    catch(ex){
+                        result = "<span style='color:red'>js error: " + ex.message + "</span>";
+                    }
+                }
             }
             if (result==="") log("Unknown command. Type h? for help");
             else log(result, true);
